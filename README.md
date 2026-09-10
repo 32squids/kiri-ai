@@ -3,8 +3,7 @@
 A self-play reinforcement learning agent for **Kiri Ai: The Duel**, a
 2-player simultaneous-selection dueling game played on a 5-space board.
 Both players secretly pick two cards per turn (movement, stance changes,
-attacks) which are revealed and resolved together — closer to *rock-paper-scissors*
-with positioning than a turn-based game. First to land two hits wins.
+attacks) which are revealed and resolved together — like a complicated game of rock-paper-scissors. First to land two hits wins.
 
 The full rules are in [kiri-ai-ruleset.txt](kiri-ai-ruleset.txt).
 
@@ -32,6 +31,7 @@ agent against itself to play it.
   more stable than pure self-mirroring. Progress is tracked separately
   against a fixed uniform-random opponent so the eval metric doesn't
   drift as the training opponent gets stronger.
+- **It's a fun game!**
 
 ## Results
 
@@ -92,6 +92,10 @@ tensorboard --logdir runs/latest/tb
 
 ```bash
 python play_cli.py --opponent model --model runs/latest/best/best_model.zip
+```
+For a challenge, try
+```bash
+python play_cli.py --opponent model --model runs/hard/best/best_model.zip
 ```
 
 Or try `--opponent random` / `--opponent cycle` to play against the
