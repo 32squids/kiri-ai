@@ -1,0 +1,198 @@
+KIRI AI: THE DUEL — RULESET
+(Compiled from original description + clarifying Q&A)
+
+===========================================================================
+GOAL
+===========================================================================
+Two players duel as samurai. A player loses the moment they have been
+successfully struck twice.
+
+===========================================================================
+BOARD & SETUP
+===========================================================================
+- The board is a line of 5 spaces, numbered 1 through 5.
+- Player One starts at space 1. Player Two starts at space 5.
+- Both players start in HEAVEN stance.
+- Each player is always in exactly one of two stances: HEAVEN or EARTH.
+- "Forward" is fixed per player for the whole match based on starting
+  side: Player One's forward = toward higher-numbered spaces (toward 5).
+  Player Two's forward = toward lower-numbered spaces (toward 1).
+- Players may occupy the same space as their opponent.
+- A player may never end movement behind the opponent (i.e. past their
+  position, in the mover's forward direction), nor pass over/through the
+  opponent's space along the way. Landing exactly on the opponent's
+  space (a tie) is allowed.
+- Spaces 1 and 5 are hard walls — you cannot move past them.
+
+===========================================================================
+HAND / CARDS
+===========================================================================
+Each player has a fixed set of 6 physical cards for the entire game:
+  1. Forward / Backward card — one physical card with two ends. The
+     player commits to which end (Forward or Backward) is in play at the
+     moment they select this card for a turn — the choice is locked in
+     before reveal.
+  2. Stance Change / Charge card: one physical card, choice
+     of end locked in at selection time.
+  3. Heaven Strike (standard attack)
+  4. Earth Strike (standard attack)
+  5. Neutral Strike (standard attack)
+  6. One Special Attack — see SPECIAL ATTACKS below.
+
+Because the Forward/Backward pair is one physical card, and the
+StanceChange/Charge pair is another, a player can never select both
+members of the same pair in a single turn (e.g. can't play both Forward
+and Backward in the same turn).
+
+===========================================================================
+MOVEMENT ACTIONS
+===========================================================================
+- Forward: move 1 space in your forward direction.
+- Backward: move 1 space away from your forward direction.
+- Charge: move 2 spaces in your forward direction.
+- Stance Change: swap HEAVEN <-> EARTH.
+
+Legality of movement (behind-opponent rule, wall rule, pass-through rule
+for Charge) is not an action-selection restriction — illegal movement
+cards CAN be selected, they simply result in no movement at all (a
+no-op) when resolved. This is different from stance-gated attacks (see
+below), which cannot be selected at all if the stance requirement isn't
+met.
+
+Movement cards have no cooldown, unlike attacks, see below.
+
+FULLY EXECUTED CHARGE IS ILLEGAL: Consider Player A at position 2 and
+Player B at position 3. Card 1 reveals Player A charges and Player B
+moves backward. Rather than a no-op, Player A charges the open distance of
+1 space to position 3, then Player B moves backward to position 4.
+
+SIMULTANEOUS MOVEMENT CROSSING: If two simultaneous moves (same
+movement type in the same reveal) would result in the players crossing/
+swapping sides relative to each other, both moves are no-op'd instead.
+For example, Player A is in position 2 and Player B is in position 3.
+Both players reveal Card 1 to be Forward. This execution would result in
+Player A and Player B swapping positions - an illegal board state - and
+would result in a no-op (note the same result would occur if both players
+played Charge). However, if players occupy the same space (for example,
+both in position 2) and one player reveals Forward and the other reveals
+Backward, they move together to the new space.
+
+===========================================================================
+STANDARD ATTACKS
+===========================================================================
+Each attack threatens a specific set of target space(s), always
+measured in the attacker's forward direction from the attacker's own
+current position:
+  - Neutral Strike: hits the attacker's own space (offset 0). Usable in
+    either stance.
+  - Earth Strike: hits 1 space ahead (offset 1). Usable only in EARTH
+    stance.
+  - Heaven Strike: hits exactly 2 spaces ahead (offset 2). Usable only
+    in HEAVEN stance.
+
+If a target offset would fall outside the 1-5 board, an attack reaching
+there always misses.
+
+===========================================================================
+HIT RESOLUTION (GENERAL RULE)
+===========================================================================
+An attack has a set of target squares (see offsets above / special
+attacks below). Given an attacker and a defender:
+
+  The attacker's strike is SUCCESSFUL if and only if:
+    (a) the defender's current position is one of the attacker's target
+        squares, AND
+    (b) EITHER the defender did not attack this same reveal, OR the
+	defender's attack is not targeting the attacker's current position
+
+In plain terms: if both players attack in the same reveal and each
+attack's targets include the other player's square, both attacks
+cancel out and neither player is hit. An example: Player A at space 1
+in Heaven stance plays Heaven Strike (targets space 3). Player B at space
+3 in Earth stance plays Earth Strike (targets space 4). B is at A's target
+(3), and A is not at B's target (4) — so A lands a successful hit. Had B
+instead been in Heaven stance playing Heaven Strike (targeting space 3, A's
+square), both attacks would hit and cancel.
+
+An attack played as Card 2 is checked as legal against the player's
+stance AFTER Card 1 is revealed. A Heaven Strike is legal as Card 2 when
+the player starts the turn in Earth Stance only if Card 1 is Stance Change.
+
+Note that it is impossible for both players to successfully hit each
+other in the same exchange. This also prevents a tie from occurring.
+
+===========================================================================
+SPECIAL ATTACKS
+===========================================================================
+There is a separate pool of 3 special attacks. At the start of the game,
+each player is blindly and randomly dealt one (a player knows their own
+special, but not their opponent's until played). The third card is set
+aside face down and never enters play. Once a player's special attack is
+played, it is discarded from the game PERMANENTLY — there is no
+cooldown/return, unlike standard attacks.
+
+The three special attacks:
+  1. Counterattack — usable in either stance. If the opponent's attack
+     this reveal would have successfully hit you, then instead they are
+     hit. If their attack would not have hit you, Counterattack is discarded
+     with no effect.
+  2. Zan-tetsu Strike — usable only in EARTH stance. Hits BOTH 2 spaces
+     ahead AND 3 spaces ahead. After playing it, regardless of success,
+     the player swaps into HEAVEN stance.
+  3. Kesa Strike — usable only in HEAVEN stance. Hits the attacker's own
+     space AND 1 space ahead. After playing it, regardless of success,
+     the player swaps into EARTH stance.
+
+===========================================================================
+STANDARD ATTACK COOLDOWN
+===========================================================================
+When a standard attack (Heaven/Earth/Neutral Strike) is played, it goes
+to a 1-turn discard pile: the player cannot play that same attack again
+on their very next turn. After sitting out that one turn, it returns to
+the hand as normal. This cooldown does not apply to movement cards.
+
+===========================================================================
+TURN STRUCTURE
+===========================================================================
+Each turn, both players simultaneously and privately select 2 cards from
+their hand of 6 to play that turn. A player may choose which of their
+two selected cards is revealed/resolved first vs. second, but decisions
+are locked in prior to any cards being revealed.
+
+Card 1 from both players is revealed at the same time and resolved.
+Then Card 2 from both players is revealed at the same time and
+resolved (unless the game already ended after Card 1 — see GAME END
+below).
+
+RESOLUTION ORDER WITHIN A SINGLE REVEAL:
+Movement always resolves before attacks. Among movement types, the
+priority order is:
+   1. Charge
+   2. Forward / Backward
+   3. Stance Change
+   4. Attacks — resolved simultaneously between both players,
+      order does not matter between the two players' attacks.
+
+Some examples:
+  - If one player's card this reveal is a movement and the other's is
+    an attack: the mover's movement fully resolves first (against the
+    opponent's pre-move position, for legality purposes), and then the
+    attack is checked against the opponent's NEW (post-move) position.
+  - If both players' cards this reveal are movement types: they resolve
+    according to the priority order above (e.g. a Charge resolves
+    before a Forward/Backward played by the other player that same
+    reveal). If both players play the SAME movement type in the same
+    reveal (e.g. both Charge), they resolve simultaneously, checked
+    against each other's pre- and post-step positions (see SIMULTANEOUS
+    MOVEMENT CROSSING).
+  - If both players' cards this reveal are attacks: resolved
+    simultaneously, per the general hit-resolution rule.
+
+===========================================================================
+GAME END
+===========================================================================
+- When a player is successfully hit, they record 1 hit. In the paper game,
+  it's recorded as flipping their character over.
+- Hit checks happen immediately after EACH card reveal (not just once
+  at the end of the turn).
+- If a player reaches 2 total hits, the game ends immediately.
